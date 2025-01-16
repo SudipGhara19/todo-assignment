@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FadeLoader } from 'react-spinners';
 
 function EditTodoModal({ showModal, todo, setTodos }) {
 
@@ -97,7 +98,13 @@ function EditTodoModal({ showModal, todo, setTodos }) {
                     onClick={handleUpdateTodo}
                     className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
                 >
-                    {loading ? 'Updating...' : 'Update'}
+                    {loading ? <FadeLoader
+                        height={4}
+                        margin={-5}
+                        radius={1}
+                        speedMultiplier={1}
+                        width={5}
+                    /> : 'Update'}
                 </button>
                 {message && <p className='text-center font-base my-4'>{message}</p>}
             </div>

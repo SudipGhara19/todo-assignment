@@ -100,7 +100,7 @@ export const updateTodo = async (req, res) => {
 //-----------------------  Update Todo State ----------------------
 export const updateTodoState = async (req, res) => {
     try {
-        const id = req.query.id;
+        const id = req.params.id;
 
         if (!id) {
             return res.status(400).json({ message: "Todo ID is required." });
@@ -135,7 +135,7 @@ export const updateTodoState = async (req, res) => {
 //-------------------------------- Delete Todo -----------------------
 export const deleteTodo = async (req, res) => {
     try {
-        const { id } = req.body;
+        const id = req.params.id;
 
         if (!id) {
             return res.status(400).json({ message: "Todo ID is required." });

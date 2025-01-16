@@ -3,12 +3,14 @@ import { LuListTodo } from "react-icons/lu";
 import Todos from '../components/Todos';
 import { IoIosAddCircle } from "react-icons/io";
 import AddTodoModal from '../components/AddTodoModal';
+import { FadeLoader } from 'react-spinners';
 
 function TodoList() {
 
     const [todos, setTodos] = useState(null);
     const [message, setMessage] = useState("")
     const [isAddTodo, setIsAddTodo] = useState(false);
+
 
 
     useEffect(() => {
@@ -56,15 +58,20 @@ function TodoList() {
                         </div>
 
                         {/* Make the Todo section scrollable */}
-                        <div className="overflow-auto auto">
-                            {!todos ? <h1 className='text-zinc-700'>Loading...</h1> :
+                        <div className="overflow-auto h-full">
+                            {!todos ? <FadeLoader className='h-2 w-2'
+                                height={4}
+                                margin={-5}
+                                radius={1}
+                                speedMultiplier={1}
+                                width={5}
+                            /> :
                                 <Todos todos={todos} setTodos={setTodos} />}
                         </div>
                     </div>
                 </div>
             </div>
             {isAddTodo && <AddTodoModal showModal={setIsAddTodo} setTodos={setTodos} />}
-
         </>
     );
 }
