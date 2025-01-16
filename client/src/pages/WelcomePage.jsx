@@ -74,7 +74,7 @@ function WelcomePage() {
             <div className='gsap-ani w-[70%] flex flex-col items-center p-4 mx-auto justify-center border-[1px] border-zinc-400 rounded-lg'>    <div className='flex flex-col items-center p-4'>
                 <h1 className='text-5xl '>Welcome</h1>
                 <h2 className='text-2xl '>To</h2>
-                <h3 className='text-3xl '><span className='text-sky-500'>Kanban-Board</span> Project for</h3>
+                <h3 className='text-3xl '><span className='text-sky-500'>Todo-List</span> Assignment for</h3>
             </div>
                 <img className='w-[20%] py-7 ' src="/logo.png" alt="co-logo" />
                 <div className='w-[50%] flex justify-center gap-5'>
